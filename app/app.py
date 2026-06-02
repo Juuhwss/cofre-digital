@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+(host='0.0.0from flask import Flask, jsonify
 import os
 import logging 
 
@@ -44,3 +44,8 @@ def api_key_info():
     return jsonify({
         "api_configured": api_key != 'KEY_NAO_CONFIGURADA',
         "key_preview": masked_key
+    })
+
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)                    
