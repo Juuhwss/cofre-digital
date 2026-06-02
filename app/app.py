@@ -1,10 +1,10 @@
-(host='0.0.0from flask import Flask, jsonify
+from flask import Flask, jsonify
 import os
 import logging 
 
 app = Flask(__name__)
 
-logging.basicConfig(level=looging.INFO)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 @app.route('/')
@@ -17,8 +17,8 @@ def home():
 
 @app.route( '/database')
 def database_info():
-    db_host = os.getenv(DB_HOST', 'localhost')
-    db_user = os.getenv(DB_USER', 'user')
+    db_host = os.getenv('DB_HOST', 'localhost')
+    db_user = os.getenv('DB_USER', 'user')
     db_password = os.getenv('DB_PASSWORD', 'SENHA_NAO_CONFIGURADA')
 
     logger.info(f"Conectando ao banco: {db_host} com usuário: {db_user}")
